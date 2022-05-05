@@ -37,7 +37,7 @@ class PlatformScreen extends Screen
      */
     public function description(): ?string
     {
-        return 'Welcome to your Orchid application.';
+        return 'Welcome to your Laravelblog.';
     }
 
     /**
@@ -49,7 +49,7 @@ class PlatformScreen extends Screen
     {
         return [
             Link::make('Website')
-                ->href('http://orchid.software')
+                ->href(env('APP_URL', 'http://localhost'))
                 ->icon('globe-alt'),
 
             Link::make('Documentation')
@@ -57,7 +57,7 @@ class PlatformScreen extends Screen
                 ->icon('docs'),
 
             Link::make('GitHub')
-                ->href('https://github.com/orchidsoftware/platform')
+                ->href('https://github.com/vvk2001github/larablog')
                 ->icon('social-github'),
         ];
     }
@@ -70,7 +70,7 @@ class PlatformScreen extends Screen
     public function layout(): iterable
     {
         return [
-            Layout::view('platform::partials.welcome'),
+            //Layout::view('platform::partials.welcome'),
         ];
     }
 }
