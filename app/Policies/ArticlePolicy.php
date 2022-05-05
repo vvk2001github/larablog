@@ -18,7 +18,8 @@ class ArticlePolicy
      */
     public function viewAny(User $user)
     {
-        //
+        if($user->hasAccess('private-article-resource')) return true;
+        return false;
     }
 
     /**
@@ -30,7 +31,8 @@ class ArticlePolicy
      */
     public function view(User $user, Article $article)
     {
-        //
+        if($user->hasAccess('private-article-resource')) return true;
+        return false;
     }
 
     /**
@@ -41,7 +43,8 @@ class ArticlePolicy
      */
     public function create(User $user)
     {
-        //
+        if($user->hasAccess('private-article-resource')) return true;
+        return false;
     }
 
     /**
@@ -53,7 +56,8 @@ class ArticlePolicy
      */
     public function update(User $user, Article $article)
     {
-        //
+        if($user->hasAccess('private-article-resource')) return true;
+        return false;
     }
 
     /**
@@ -65,7 +69,8 @@ class ArticlePolicy
      */
     public function delete(User $user, Article $article)
     {
-        //
+        if($user->hasAccess('private-article-resource')) return true;
+        return false;
     }
 
     /**
@@ -77,7 +82,8 @@ class ArticlePolicy
      */
     public function restore(User $user, Article $article)
     {
-        //
+        if($user->hasAccess('private-article-resource')) return true;
+        return false;
     }
 
     /**
@@ -89,6 +95,7 @@ class ArticlePolicy
      */
     public function forceDelete(User $user, Article $article)
     {
-        //
+        if($user->hasAccess('private-article-resource')) return true;
+        return false;
     }
 }

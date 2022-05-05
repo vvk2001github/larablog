@@ -12,6 +12,7 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.5",
+        "orchid/crud": "^3.6",
         "orchid/platform": "^12.4"
     },
     "require-dev": {

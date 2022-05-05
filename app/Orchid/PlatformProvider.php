@@ -70,7 +70,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->route('platform.example.cards')
                 ->divider(),
 
-            Menu::make('Documentation')
+            /*Menu::make('Documentation')
                 ->title('Docs')
                 ->icon('docs')
                 ->url('https://orchid.software/en/docs'),
@@ -82,7 +82,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->badge(function () {
                     return Dashboard::version();
                 }, Color::DARK()),
-
+*/
             Menu::make(__('Users'))
                 ->icon('user')
                 ->route('platform.systems.users')
