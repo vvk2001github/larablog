@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Welcome;
 
@@ -14,8 +15,10 @@ use App\Http\Controllers\Welcome;
 |
 */
 
-Route::get('/', [Welcome::class, 'index']);
+Route::get('/', [Welcome::class, 'index'])->name('welcome');
+Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 
+/*
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -25,3 +28,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+*/
