@@ -86,6 +86,9 @@ class ArticleResource extends Resource
         return [
             Sight::make('descr', 'Заголовок'),
             Sight::make('content', 'Текст'),
+            Sight::make('published_at', 'Дата публикации')->render(function ($model) {
+                return $model->published_at->toDateTimeString();
+            }),
             Sight::make('published', 'Опубликовано')->render(function($e) {return $e->published ? 'Да' : 'Нет';})
 
         ];
@@ -107,4 +110,15 @@ class ArticleResource extends Resource
     {
         return 'private-article-resource';
     }
+
+    public static function label(): string
+    {
+        return "Статьи";
+    }
+
+    public static function singularLabel(): string
+    {
+        return "Статью";
+    }
+
 }
