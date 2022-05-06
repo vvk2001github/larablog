@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('descr')->comment('Заголовок')->nullable();
             $table->text('content')->comment('Содержимое')->nullable();
             $table->boolean('published')->comment('Опубликовано')->default(false);
+            $table->dateTime('published_at')->useCurrent();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

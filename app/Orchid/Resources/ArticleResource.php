@@ -5,6 +5,7 @@ namespace App\Orchid\Resources;
 use Orchid\Crud\Filters\DefaultSorted;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Fields\CheckBox;
+use Orchid\Screen\Fields\DateTimer;
 use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Quill;
 use Orchid\Screen\Fields\SimpleMDE;
@@ -36,6 +37,10 @@ class ArticleResource extends Resource
             SimpleMDE::make('content')
                 ->toolbar(["text", "color", "header", "list", "format", "media"]),
 
+            DateTimer::make('published_at')
+                ->title('Дата публикации')
+                ->enableTime(),
+
             CheckBox::make('published')
                 ->title('Опубликовано')
                 ->placeholder('Опубликовано')
@@ -64,10 +69,10 @@ class ArticleResource extends Resource
                     return $model->created_at->toDateTimeString();
                 }),
 
-            TD::make('updated_at', 'Update date')
+            TD::make('published_at', 'Дата публикации')
                 ->render(function ($model) {
-                    return $model->updated_at->toDateTimeString();
-                }),
+                    return $model->published_at->toDateTimeString();
+                })->sort(),
         ];
     }
 

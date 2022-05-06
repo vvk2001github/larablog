@@ -6,6 +6,9 @@
 
         <title>Larablog</title>
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+        <link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.5.1/styles/default.min.css">
+        <script src="//unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
         @livewireStyles
     </head>
     <body class="bg-gray-100 font-sans leading-normal tracking-normal">

@@ -11,7 +11,7 @@ class Welcome extends Controller
     {
         $articles = DB::table('articles')
             ->where('published', 1)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('published_at', 'desc')
             ->paginate(4);
 
         return view('welcome', compact('articles'));
