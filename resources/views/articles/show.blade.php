@@ -7,7 +7,7 @@
         <p class="text-sm md:text-base font-normal text-gray-600">Published {{ $article->created_at }}</p>
     </div>
     <!-- Content -->
-    <p class="py-6">{{ $article->content }}</p>
+    <p class="py-2">{!!  Str::markdown($article->content)  !!}</p>
     <p class="text-base md:text-sm text-green-500 font-bold">
         <a href="{{ route('welcome') }}" class="text-base md:text-sm text-green-500 font-bold no-underline hover:underline">На главную</a>
     </p>

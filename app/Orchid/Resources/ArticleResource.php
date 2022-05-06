@@ -6,6 +6,7 @@ use Orchid\Crud\Filters\DefaultSorted;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Fields\CheckBox;
 use Orchid\Screen\Fields\Input;
+use Orchid\Screen\Fields\Quill;
 use Orchid\Screen\Fields\SimpleMDE;
 use Orchid\Screen\Sight;
 use Orchid\Screen\TD;
