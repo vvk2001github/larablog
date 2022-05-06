@@ -2,6 +2,7 @@
 
 namespace App\Orchid\Resources;
 
+use App\Orchid\Actions\ArticlePreviewAction;
 use Orchid\Crud\Filters\DefaultSorted;
 use Orchid\Crud\Resource;
 use Orchid\Screen\Fields\CheckBox;
@@ -119,6 +120,18 @@ class ArticleResource extends Resource
     public static function singularLabel(): string
     {
         return "Статью";
+    }
+
+    public function actions(): array
+    {
+        return [
+            ArticlePreviewAction::class,
+        ];
+    }
+
+    public static function editBreadcrumbsMessage(): string
+    {
+        return __('Редактировать :resource', ['resource' => static::singularLabel()]);
     }
 
 }
