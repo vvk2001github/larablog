@@ -32,9 +32,4 @@ class ArticlePreviewAction extends Action
 
         Toast::message('It worked!');
     }
-
-    public static function editBreadcrumbsMessage(): string
-    {
-        return "Редактировать статью";
-    }
 }
